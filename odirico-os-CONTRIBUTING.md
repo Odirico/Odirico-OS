@@ -87,6 +87,7 @@ chore: upgrade supabase-js to v2.45
 
 - Copy `.env.example` to `.env.local` and fill in your values
 - Never commit `.env.local` or any real secrets
+- Add hosted secrets in Vercel project settings instead of relying on a tracked `.env.local`
 - If you add a new env variable, add it to `.env.example` with an empty value
 
 ---

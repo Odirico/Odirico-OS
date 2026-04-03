@@ -65,11 +65,12 @@ Copy `.env.example` to `.env.local` and fill in your values. Never commit `.env.
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 NEXT_PUBLIC_APP_URL=
 UPSTASH_REDIS_REST_URL=
 UPSTASH_REDIS_REST_TOKEN=
+ALLOWED_ORIGINS=
 ```
 
 ---
@@ -144,6 +145,9 @@ Schema documentation is in `docs/db-schema.md`.
 ## Deployment
 
 Deployed to Vercel. Pushes to `main` trigger production deploys automatically.
+
+Set the same values from `.env.example` in the Vercel project's environment
+settings. Do not rely on a committed `.env.local` for hosted builds.
 
 See `docs/deployment.md` for full deployment steps and environment setup.
 

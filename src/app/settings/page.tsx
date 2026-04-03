@@ -4,6 +4,8 @@ import { canManageOrganization } from "@/lib/auth/roles";
 import { requireUserContext } from "@/lib/auth/session";
 import { listManagedUsers } from "@/lib/settings/admin";
 
+export const dynamic = "force-dynamic";
+
 export default async function SettingsPage() {
   const userContext = await requireUserContext();
   const managedUsers = canManageOrganization(userContext.roles)

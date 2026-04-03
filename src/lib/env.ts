@@ -11,14 +11,15 @@ const serverSchema = publicSchema.extend({
   UPSTASH_REDIS_REST_URL: z.string().url().optional(),
   UPSTASH_REDIS_REST_TOKEN: z.string().min(1).optional(),
   SENTRY_DSN: z.string().url().optional(),
-  ALLOWED_ORIGINS: z.string().min(1),
 });
+const allowedOriginsSchema = z.string().min(1);
 
 type PublicEnv = z.infer<typeof publicSchema>;
 type ServerEnv = z.infer<typeof serverSchema>;
 
 let cachedPublicEnv: PublicEnv | null = null;
 let cachedServerEnv: ServerEnv | null = null;
+let cachedAllowedOrigins: string[] | null = null;
 
 export function getPublicEnv() {
   if (cachedPublicEnv) return cachedPublicEnv;
@@ -43,15 +44,20 @@ export function getServerEnv() {
     UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
     UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
     SENTRY_DSN: process.env.SENTRY_DSN,
-    ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS,
   });
 
   return cachedServerEnv;
 }
 
 export function getAllowedOrigins() {
-  return getServerEnv()
-    .ALLOWED_ORIGINS.split(",")
+  if (cachedAllowedOrigins) return cachedAllowedOrigins;
+
+  // Default CORS to the app URL so missing API-only config does not break page builds.
+  cachedAllowedOrigins = allowedOriginsSchema
+    .parse(process.env.ALLOWED_ORIGINS ?? getPublicEnv().NEXT_PUBLIC_APP_URL)
+    .split(",")
     .map((origin) => origin.trim())
     .filter(Boolean);
+
+  return cachedAllowedOrigins;
 }

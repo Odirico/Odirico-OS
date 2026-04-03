@@ -3,6 +3,8 @@ import { TicketWorkspace } from "@/components/tickets/ticket-workspace";
 import { requireUserContext } from "@/lib/auth/session";
 import { getDashboardSnapshot } from "@/lib/tickets/queries";
 
+export const dynamic = "force-dynamic";
+
 export default async function DashboardPage() {
   const userContext = await requireUserContext();
   const snapshot = await getDashboardSnapshot();
