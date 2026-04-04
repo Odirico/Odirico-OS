@@ -16,11 +16,11 @@ export default async function HomePage() {
     <main className="landing-shell">
       <section className="landing-panel">
         <div>
-          <p className="eyebrow">PoleQA</p>
-          <h1>Project management platform for structured ticket operations.</h1>
+          <p className="eyebrow">Odirico OS</p>
+          <h1>Operational software for inspection, field reporting, and project delivery.</h1>
           <p className="muted">
-            Ticket-first project management workspace with role-aware dashboards,
-            persistent filters, export actions, and structured team assignment.
+            PoleQA is the first module inside Odirico OS, built to give infrastructure teams
+            a clearer operational workspace for tickets, inspections, and follow-through.
           </p>
         </div>
 

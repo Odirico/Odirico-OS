@@ -12,8 +12,8 @@ export default async function DashboardPage() {
   return (
     <AppShell
       currentPath="/dashboard"
-      title="Project Management Platform"
-      subtitle="Role-aware visibility layer with separate PM, QC, designer, client, and project-type perspectives."
+      title="PoleQA Operations"
+      subtitle="Role-aware workspace for inspections, tickets, and project execution across infrastructure teams."
       userContext={userContext}
     >
       <TicketWorkspace

@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PoleQA",
-  description: "Protected QA workflow app scaffolded with Next.js and Supabase.",
+  title: "Odirico OS | PoleQA",
+  description: "Operational software for utility infrastructure teams, starting with PoleQA inspection and workflow tools.",
 };
 
 export default function RootLayout({

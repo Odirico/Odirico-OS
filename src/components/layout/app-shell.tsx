@@ -38,8 +38,8 @@ export function AppShell({
         <div className="brand-block">
           <div className="brand-mark">PQ</div>
           <div>
-            <div className="brand-name">PoleQA</div>
-            <div className="brand-subtitle">Project management platform</div>
+            <div className="brand-name">Odirico OS</div>
+            <div className="brand-subtitle">PoleQA module</div>
           </div>
         </div>
 

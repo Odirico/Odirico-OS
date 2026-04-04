@@ -1,6 +1,6 @@
 # Odirico OS
 
-Odirico OS is a workflow platform built for infrastructure, design, and QA/QC operations. It provides tools for managing tickets, tracking production, organizing teams, and improving project execution.
+Odirico OS is the software platform inside Odirico. It is built for utility infrastructure and field operations, starting with PoleQA for inspection, ticketing, and documentation workflows.
 
 > **Status:** Private beta — active development
 
@@ -8,12 +8,12 @@ Odirico OS is a workflow platform built for infrastructure, design, and QA/QC op
 
 ## Features
 
-- Role-based dashboards (PM, QC, Designer, Client)
-- QA/QC ticketing system with kanban view
+- PoleQA as the first operational module
+- Role-based dashboards for different project participants
+- Ticketing, inspection, and workflow tracking
 - Project and team management
 - Customizable workspace settings
-- Admin controls for organizations
-- Demo mode for client walkthroughs
+- Demo mode for walkthroughs
 
 ---
 
@@ -157,6 +157,6 @@ See `docs/deployment.md` for full deployment steps and environment setup.
 
 | Repo | Description |
 |---|---|
-| `odirico-web` | Marketing site (odirico.com) |
+| `odirico-site` | Marketing site (odirico.com) |
 | `odirico-internal` | Internal ops tools (private) |
 | `odirico-brand` | Brand assets and guidelines (private) |

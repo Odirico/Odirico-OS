@@ -84,9 +84,9 @@ export function LoginForm() {
   return (
     <form className="auth-card" onSubmit={handleSubmit}>
       <div className="auth-heading">
-        <p className="eyebrow">PoleQA</p>
+        <p className="eyebrow">Odirico OS</p>
         <h1>Sign in</h1>
-        <p>Use Supabase Auth to access the protected QA workspace.</p>
+        <p>Use Supabase Auth to access PoleQA and the operational workspace.</p>
       </div>
 
       <label className="field">
@@ -97,7 +97,7 @@ export function LoginForm() {
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          placeholder="sarah@poleqa.io"
+          placeholder="name@odirico.com"
           required
         />
       </label>
@@ -144,7 +144,7 @@ export function LoginForm() {
 
       {demoModeEnabled ? (
         <p className="form-message">
-          Demo mode bypasses Supabase sign-in and loads sample QA/QC tickets locally.
+          Demo mode bypasses Supabase sign-in and loads sample inspection and project workflow data locally.
         </p>
       ) : null}
     </form>
