@@ -118,15 +118,20 @@ odirico-os/
 
 ---
 
-## Branch Structure
+## Branching Strategy
+
+This repo uses feature branching.
 
 | Branch | Purpose |
 |---|---|
-| `main` | Production-ready code |
-| `develop` | Active integration branch |
+| `main` | Stable branch and production source |
 | `feature/*` | New features (e.g. `feature/ticket-comments`) |
 | `fix/*` | Bug fixes (e.g. `fix/role-refresh`) |
 | `refactor/*` | Refactors (e.g. `refactor/dashboard-layout`) |
+| `docs/*` | Documentation-only changes |
+| `chore/*` | Tooling, config, or maintenance updates |
+
+Create short-lived branches from `main`, open a PR, and merge back into `main` once the work is ready.
 
 ---
 

@@ -4,17 +4,20 @@ Thanks for working on Odirico OS. This document covers how to work in this repo 
 
 ---
 
-## Branch Structure
+## Branching Strategy
+
+This repo uses feature branching.
 
 | Branch | Purpose |
 |---|---|
-| `main` | Production-ready code only |
-| `develop` | Active integration branch |
+| `main` | Stable branch and production source |
 | `feature/*` | New features |
 | `fix/*` | Bug fixes |
 | `refactor/*` | Refactors and cleanup |
+| `docs/*` | Documentation-only work |
+| `chore/*` | Tooling, config, and maintenance updates |
 
-**Never push directly to `main`.** Open a PR from your feature or fix branch.
+**Do not push direct work to `main`.** Create a short-lived branch from `main`, open a PR, and merge back into `main` once the change is reviewed and ready.
 
 ### Branch naming examples
 
@@ -25,6 +28,8 @@ fix/role-refresh
 fix/auth-redirect
 refactor/dashboard-layout
 refactor/supabase-client
+docs/branching-guide
+chore/update-ci-config
 ```
 
 ---
@@ -32,9 +37,9 @@ refactor/supabase-client
 ## Workflow
 
 ```bash
-# 1. Start from develop
-git checkout develop
-git pull origin develop
+# 1. Start from main
+git checkout main
+git pull origin main
 
 # 2. Create your branch
 git checkout -b feature/your-feature-name
@@ -43,7 +48,7 @@ git checkout -b feature/your-feature-name
 git add .
 git commit -m "feat: add ticket comment thread"
 
-# 4. Push and open a PR into develop
+# 4. Push and open a PR into main
 git push origin feature/your-feature-name
 ```
 
@@ -98,4 +103,4 @@ chore: upgrade supabase-js to v2.45
 - [ ] No console logs left in
 - [ ] No `.env.local` values hardcoded anywhere
 - [ ] New env vars added to `.env.example`
-- [ ] Branch is up to date with `develop`
+- [ ] Branch is up to date with `main`
