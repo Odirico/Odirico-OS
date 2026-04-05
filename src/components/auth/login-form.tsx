@@ -86,7 +86,7 @@ export function LoginForm() {
       <div className="auth-heading">
         <p className="eyebrow">Odirico OS</p>
         <h1>Sign in</h1>
-        <p>Use Supabase Auth to access PoleQA and the operational workspace.</p>
+        <p>Use your workspace credentials to access the live PoleQA module inside Odirico OS.</p>
       </div>
 
       <label className="field">
@@ -110,7 +110,7 @@ export function LoginForm() {
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
-          placeholder="••••••••"
+          placeholder="Enter your password"
           required
         />
       </label>

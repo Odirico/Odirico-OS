@@ -21,6 +21,27 @@ const navItems: Array<{ href: string; label: string }> = [
   { href: "/settings", label: "Settings" },
 ];
 
+const platformModules = [
+  {
+    label: "PoleQA",
+    status: "Live",
+    href: "/dashboard",
+    external: false,
+  },
+  {
+    label: "PM Platform",
+    status: "Planned",
+    href: "https://odirico.com/products.html#pm",
+    external: true,
+  },
+  {
+    label: "Training",
+    status: "Planned",
+    href: "https://odirico.com/products.html#training",
+    external: true,
+  },
+];
+
 export function AppShell({
   currentPath,
   title,
@@ -30,16 +51,48 @@ export function AppShell({
 }: AppShellProps) {
   const settings = useSettings(userContext.user.email);
   const canManageOrg = canManageOrganization(userContext.roles);
-  const roleSummary = userContext.roles.map((role) => settings.roleLabel(role)).join(" · ");
+  const roleSummary = userContext.roles.map((role) => settings.roleLabel(role)).join(" | ");
 
   return (
     <div className="app-shell">
       <aside className="sidebar">
         <div className="brand-block">
-          <div className="brand-mark">PQ</div>
+          <div className="brand-mark">OS</div>
           <div>
             <div className="brand-name">Odirico OS</div>
-            <div className="brand-subtitle">PoleQA module</div>
+            <div className="brand-subtitle">PoleQA live now. PM and Training next.</div>
+          </div>
+        </div>
+
+        <div className="sidebar-module-panel">
+          <p className="sidebar-label">Platform modules</p>
+          <div className="sidebar-module-list">
+            {platformModules.map((item) => {
+              const content = (
+                <>
+                  <span>{item.label}</span>
+                  <span className={item.status === "Live" ? "module-pill live" : "module-pill"}>
+                    {item.status}
+                  </span>
+                </>
+              );
+
+              return item.external ? (
+                <a
+                  key={item.label}
+                  className="sidebar-module-link"
+                  href={item.href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {content}
+                </a>
+              ) : (
+                <Link key={item.label} className="sidebar-module-link" href={item.href as never}>
+                  {content}
+                </Link>
+              );
+            })}
           </div>
         </div>
 
@@ -73,7 +126,7 @@ export function AppShell({
       <main className="page-frame">
         <header className="page-header">
           <div>
-            <p className="eyebrow">Protected workspace</p>
+            <p className="eyebrow">Odirico OS / PoleQA</p>
             <h1>{title}</h1>
             <p>{subtitle}</p>
           </div>

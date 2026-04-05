@@ -12,8 +12,8 @@ export default async function DashboardPage() {
   return (
     <AppShell
       currentPath="/dashboard"
-      title="PoleQA Operations"
-      subtitle="Role-aware workspace for inspections, tickets, and project execution across infrastructure teams."
+      title="PoleQA Workspace"
+      subtitle="Live inspection and QA/QC operations inside the broader Odirico OS platform."
       userContext={userContext}
     >
       <TicketWorkspace

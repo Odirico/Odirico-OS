@@ -4,8 +4,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Odirico OS | PoleQA",
-  description: "Operational software for utility infrastructure teams, starting with PoleQA inspection and workflow tools.",
+  title: "Odirico OS",
+  description:
+    "Operational software for infrastructure teams, with PoleQA live today and PM plus training modules positioned under the same platform.",
 };
 
 export default function RootLayout({

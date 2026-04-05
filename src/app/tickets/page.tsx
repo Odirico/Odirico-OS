@@ -12,8 +12,8 @@ export default async function TicketsPage() {
   return (
     <AppShell
       currentPath="/tickets"
-      title="Ticket System"
-      subtitle="Working queue optimized for lower data entry, due-date-driven urgency, and bulk folder intake."
+      title="PoleQA Ticket System"
+      subtitle="Working queue for review cycles, issue handling, and documentation-heavy field workflows."
       userContext={userContext}
     >
       <TicketWorkspace

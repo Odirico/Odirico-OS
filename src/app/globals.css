@@ -1,19 +1,19 @@
 :root {
-  --bg: #f4f6fb;
-  --panel: rgba(255, 255, 255, 0.88);
+  --bg: #f5f5f8;
+  --panel: rgba(255, 255, 255, 0.92);
   --panel-strong: #ffffff;
-  --ink: #12233b;
-  --muted: #60738b;
-  --line: #d7dfeb;
-  --line-strong: #b7c5d7;
-  --brand: #163a70;
-  --brand-2: #2e67c7;
-  --accent: #ff8b4c;
-  --accent-soft: #fff1e7;
+  --ink: #0a0a0f;
+  --muted: #6b6b85;
+  --line: #ddddea;
+  --line-strong: #c8cad8;
+  --brand: #0a0a0f;
+  --brand-2: #ff5a35;
+  --accent: #2563eb;
+  --accent-soft: #eef4ff;
   --success: #1d7a56;
   --danger: #bb4d35;
   --warning: #8f6400;
-  --shadow: 0 20px 60px rgba(18, 35, 59, 0.08);
+  --shadow: 0 20px 60px rgba(10, 10, 15, 0.08);
   --radius-lg: 28px;
   --radius-md: 18px;
   --radius-sm: 12px;
@@ -51,11 +51,11 @@ body {
   margin: 0;
   min-height: 100%;
   background:
-    radial-gradient(circle at top left, rgba(46, 103, 199, 0.14), transparent 32%),
-    radial-gradient(circle at top right, rgba(255, 139, 76, 0.12), transparent 22%),
-    linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.09), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 90, 53, 0.12), transparent 24%),
+    linear-gradient(180deg, #fbfbfd 0%, var(--bg) 100%);
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Aptos", "Segoe UI", sans-serif;
 }
 
 a {
@@ -106,6 +106,130 @@ button {
   gap: 1.5rem;
 }
 
+.landing-shell-platform {
+  padding: 2.5rem;
+}
+
+.landing-panel-platform {
+  width: min(1180px, 100%);
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.5rem;
+}
+
+.landing-copy h1,
+.auth-intro-panel h1,
+.page-header h1,
+.auth-heading h1 {
+  font-family: "Aptos Display", "Segoe UI", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.landing-copy h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 5vw, 4.9rem);
+  line-height: 0.96;
+}
+
+.landing-lead {
+  max-width: 38rem;
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.module-summary-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.module-summary-card {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 1.35rem;
+  box-shadow: var(--shadow);
+}
+
+.module-summary-card h2 {
+  margin: 0.75rem 0 0.45rem;
+  font-family: "Aptos Display", "Segoe UI", sans-serif;
+  font-size: 1.5rem;
+}
+
+.module-summary-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.module-summary-card-live {
+  border-color: rgba(255, 90, 53, 0.3);
+  box-shadow: 0 20px 48px rgba(255, 90, 53, 0.12);
+}
+
+.module-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: rgba(255, 90, 53, 0.12);
+  color: var(--brand-2);
+}
+
+.module-status-planned {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--accent);
+}
+
+.auth-layout-split {
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 440px);
+  place-items: stretch;
+  align-items: center;
+  gap: 1.5rem;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.auth-intro-panel,
+.auth-form-wrap {
+  width: 100%;
+}
+
+.auth-form-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.auth-intro-panel {
+  padding: 2rem;
+}
+
+.auth-intro-panel h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  line-height: 1;
+}
+
+.auth-module-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.auth-module-item {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.05rem;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.auth-module-item span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .landing-actions,
 .auth-actions,
 .toolbar-actions,
@@ -130,7 +254,7 @@ button {
 }
 
 .primary-button {
-  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+  background: linear-gradient(135deg, var(--brand-2), #ff7a5a);
   color: white;
 }
 
@@ -168,8 +292,8 @@ button {
 .sidebar {
   padding: 2rem 1.25rem;
   background:
-    radial-gradient(circle at top, rgba(255, 139, 76, 0.2), transparent 20%),
-    linear-gradient(180deg, #0f2441 0%, #132d53 100%);
+    radial-gradient(circle at top, rgba(255, 90, 53, 0.18), transparent 20%),
+    linear-gradient(180deg, #0a0a0f 0%, #171726 100%);
   color: #eef2f8;
   display: flex;
   flex-direction: column;
@@ -186,7 +310,7 @@ button {
   width: 52px;
   height: 52px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--accent), #ffb168);
+  background: linear-gradient(135deg, var(--brand-2), #ff8c64);
   color: white;
   display: grid;
   place-items: center;
@@ -207,6 +331,63 @@ button {
 .sidebar-nav {
   display: grid;
   gap: 0.5rem;
+}
+
+.sidebar-module-panel {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sidebar-label {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8f98a8;
+}
+
+.sidebar-module-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.sidebar-module-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #eef2f8;
+  transition:
+    background 140ms ease,
+    transform 140ms ease;
+}
+
+.sidebar-module-link:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-1px);
+}
+
+.module-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  background: rgba(37, 99, 235, 0.16);
+  color: #b5d0ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.module-pill.live {
+  background: rgba(255, 90, 53, 0.18);
+  color: #ffd2c7;
 }
 
 .sidebar-link {
@@ -533,6 +714,11 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .landing-panel-platform,
+  .auth-layout-split {
+    grid-template-columns: 1fr;
+  }
+
   .stats-grid,
   .panel-grid,
   .detail-grid,
@@ -543,5 +729,29 @@ button {
 
   .field-span-2 {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .landing-shell-platform,
+  .auth-layout {
+    padding: 1.25rem;
+  }
+
+  .landing-panel,
+  .auth-card,
+  .auth-intro-panel {
+    padding: 1.4rem;
+  }
+
+  .landing-actions,
+  .auth-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .ghost-button,
+  .inline-link {
+    width: 100%;
   }
 }
